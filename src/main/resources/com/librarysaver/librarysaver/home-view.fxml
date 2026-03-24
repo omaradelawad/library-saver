@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="573.0" prefWidth="1133.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER" layoutX="48.0" layoutY="126.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="322.0" prefWidth="1037.0" AnchorPane.bottomAnchor="125.0" AnchorPane.leftAnchor="48.0" AnchorPane.rightAnchor="48.0" AnchorPane.topAnchor="126.0">
+         <children>
+            <VBox alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="304.0" text="اقسامك">
+                     <font>
+                        <Font name="Cairo Regular" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="304.0" text="قائمة التحميلات">
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Cairo Regular" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="304.0" text="النسخ الاحتياطي" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="323.0" layoutY="10.0">
+               <children>
+                  <ImageView fitHeight="327.0" fitWidth="495.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/2631296_8055-Photoroom.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

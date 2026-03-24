@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-background: transparent; -fx-background-color: transparent;" stylesheets="@CSS/general.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.librarysaver.librarysaver.ViewSectionViewController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <content>
+        <VBox alignment="TOP_CENTER" spacing="20">
+            <!-- Section Header with ID and Name -->
+            <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-background-color: #00564d; -fx-background-radius: 15;">
+                <padding>
+                    <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+                </padding>
+                <children>
+               <ImageView fitHeight="71.0" fitWidth="173.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@images/51017075_paper_2.png" />
+                  </image>
+               </ImageView>
+                    <VBox spacing="2">
+                        <children>
+                            <Label fx:id="sectionId" text=" SEC-001" textFill="WHITE">
+                                <font>
+                                    <Font name="Cairo Regular" size="14.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="sectionName" text="اسم المجموعة: المستندات العامة" textFill="WHITE">
+                                <font>
+                                    <Font name="Cairo Bold" size="24.0" />
+                                </font>
+                            </Label>
+                        </children>
+                    </VBox>
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Label style="-fx-font-size: 16px;" text="إجمالي العناصر: 12" textFill="WHITE">
+                        <font>
+                            <Font name="Cairo Regular" size="16.0" />
+                        </font>
+                    </Label>
+                </children>
+                <effect>
+                    <DropShadow color="#00000033" offsetX="2" offsetY="2" radius="5" />
+                </effect>
+            </HBox>
+
+            <!-- Add New Section Form -->
+            <VBox spacing="15" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-color: #e0e0e0; -fx-border-radius: 15;">
+                <effect>
+                    <DropShadow color="#0000001a" offsetX="0" offsetY="2" radius="8" />
+                </effect>
+                <padding>
+                    <Insets bottom="20.0" left="25.0" right="25.0" top="20.0" />
+                </padding>
+
+                <children>
+                    <!-- Title -->
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <children>
+                            <Text fill="#00564d" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 24px;" text="➕" />
+                            <Text fill="#00564d" strokeType="OUTSIDE" strokeWidth="0.0" text="إضافة مجموعة فرعية جديدة">
+                                <font>
+                                    <Font name="Cairo SemiBold" size="22.0" />
+                                </font>
+                            </Text>
+                        </children>
+                    </HBox>
+
+                    <!-- Form Fields for New Section -->
+                    <HBox alignment="CENTER" spacing="15" HBox.hgrow="ALWAYS">
+                        <children>
+                            <!-- Title Field -->
+                            <VBox spacing="5" HBox.hgrow="ALWAYS">
+                                <children>
+                                    <Label style="-fx-font-size: 14px;" text="عنوان المجموعة" textFill="#333333">
+                                        <font>
+                                            <Font name="Cairo Regular" size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <TextField fx:id="sectionTitle" promptText="أدخل عنوان المجموعة" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e0e0e0; -fx-background-color: #f8f9fa; -fx-padding: 10;" HBox.hgrow="ALWAYS">
+                                        <font>
+                                            <Font name="Cairo Regular" size="14.0" />
+                                        </font>
+                                    </TextField>
+                                </children>
+                            </VBox>
+
+                            <!-- Description Field -->
+                            <VBox spacing="5" HBox.hgrow="ALWAYS">
+                                <children>
+                                    <Label style="-fx-font-size: 14px;" text="وصف المجموعة" textFill="#333333">
+                                        <font>
+                                            <Font name="Cairo Regular" size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <TextField fx:id="description" promptText="أدخل وصف المجموعة" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e0e0e0; -fx-background-color: #f8f9fa; -fx-padding: 10;" HBox.hgrow="ALWAYS">
+                                        <font>
+                                            <Font name="Cairo Regular" size="14.0" />
+                                        </font>
+                                    </TextField>
+                                </children>
+                            </VBox>
+
+                            <!-- Optional Third Field -->
+                            <VBox spacing="5" HBox.hgrow="ALWAYS">
+                                <children>
+                                    <Label style="-fx-font-size: 14px;" text="معلومات إضافية" textFill="#333333">
+                                        <font>
+                                            <Font name="Cairo Regular" size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <TextField fx:id="src" promptText="اختياري" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e0e0e0; -fx-background-color: #f8f9fa; -fx-padding: 10;" HBox.hgrow="ALWAYS">
+                                        <font>
+                                            <Font name="Cairo Regular" size="14.0" />
+                                        </font>
+                                    </TextField>
+                                </children>
+                            </VBox>
+
+                            <!-- Add Button -->
+                            <VBox alignment="BOTTOM_CENTER" spacing="5">
+                                <children>
+                                    <Region prefHeight="24" /> <!-- Spacer to align with labels -->
+                                    <Button fx:id="addNewSection" mnemonicParsing="false" onAction="#addNewSection" prefHeight="44.0" style="-fx-background-color: #00564d; -fx-background-radius: 8; -fx-text-fill: white; -fx-cursor: hand; -fx-padding: 10 20 10 20;" text="➕ إضافة">
+                                        <font>
+                                            <Font name="Cairo Bold" size="15.0" />
+                                        </font>
+                                        <effect>
+                                            <DropShadow color="#00564d80" offsetX="0" offsetY="2" radius="4" />
+                                        </effect>
+                                    </Button>
+                                </children>
+                            </VBox>
+                        </children>
+                    </HBox>
+                </children>
+            </VBox>
+
+            <!-- Add New Item Form -->
+            <VBox spacing="15" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-color: #e0e0e0; -fx-border-radius: 15;">
+                <effect>
+                    <DropShadow color="#0000001a" offsetX="0" offsetY="2" radius="8" />
+                </effect>
+                <padding>
+                    <Insets bottom="20.0" left="25.0" right="25.0" top="20.0" />
+                </padding>
+
+                <children>
+                    <!-- Title -->
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <children>
+                            <Text fill="#00564d" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 24px;" text="📄" />
+                            <Text fill="#00564d" strokeType="OUTSIDE" strokeWidth="0.0" text="إضافة عنصر جديد">
+                                <font>
+                                    <Font name="Cairo SemiBold" size="22.0" />
+                                </font>
+                            </Text>
+                        </children>
+                    </HBox>
+
+                    <!-- Form Fields for New Item -->
+                    <HBox alignment="CENTER" spacing="15" HBox.hgrow="ALWAYS">
+                        <children>
+                            <!-- Title Field -->
+                            <VBox spacing="5" HBox.hgrow="ALWAYS">
+                                <children>
+                                    <Label style="-fx-font-size: 14px;" text="عنوان العنصر" textFill="#333333">
+                                        <font>
+                                            <Font name="Cairo Regular" size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <TextField fx:id="linkTitle" promptText="أدخل عنوان العنصر" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e0e0e0; -fx-background-color: #f8f9fa; -fx-padding: 10;" HBox.hgrow="ALWAYS">
+                                        <font>
+                                            <Font name="Cairo Regular" size="14.0" />
+                                        </font>
+                                    </TextField>
+                                </children>
+                            </VBox>
+
+                            <!-- Description Field -->
+                            <VBox spacing="5" HBox.hgrow="ALWAYS">
+                                <children>
+                                    <Label style="-fx-font-size: 14px;" text="وصف العنصر" textFill="#333333">
+                                        <font>
+                                            <Font name="Cairo Regular" size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <TextField fx:id="linkDescription" promptText="أدخل وصف العنصر" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e0e0e0; -fx-background-color: #f8f9fa; -fx-padding: 10;" HBox.hgrow="ALWAYS">
+                                        <font>
+                                            <Font name="Cairo Regular" size="14.0" />
+                                        </font>
+                                    </TextField>
+                                </children>
+                            </VBox>
+
+                            <!-- Link Field -->
+                            <VBox spacing="5" HBox.hgrow="ALWAYS">
+                                <children>
+                                    <Label style="-fx-font-size: 14px;" text="الرابط" textFill="#333333">
+                                        <font>
+                                            <Font name="Cairo Regular" size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <TextField fx:id="hyperlink" promptText="أدخل الرابط" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e0e0e0; -fx-background-color: #f8f9fa; -fx-padding: 10;" HBox.hgrow="ALWAYS">
+                                        <font>
+                                            <Font name="Cairo Regular" size="14.0" />
+                                        </font>
+                                    </TextField>
+                                </children>
+                            </VBox>
+
+                            <!-- Add Button -->
+                            <VBox alignment="BOTTOM_CENTER" spacing="5">
+                                <children>
+                                    <Region prefHeight="24" /> <!-- Spacer to align with labels -->
+                                    <Button fx:id="saveLink" mnemonicParsing="false" onAction="#saveLink" prefHeight="44.0" style="-fx-background-color: #00564d; -fx-background-radius: 8; -fx-text-fill: white; -fx-cursor: hand; -fx-padding: 10 20 10 20;" text="➕ إضافة">
+                                        <font>
+                                            <Font name="Cairo Bold" size="15.0" />
+                                        </font>
+                                        <effect>
+                                            <DropShadow color="#00564d80" offsetX="0" offsetY="2" radius="4" />
+                                        </effect>
+                                    </Button>
+                                </children>
+                            </VBox>
+                        </children>
+                    </HBox>
+                </children>
+            </VBox>
+
+            <!-- Container 1: Subsections List -->
+            <VBox spacing="15" VBox.vgrow="ALWAYS">
+                <children>
+                    <!-- Header -->
+                    <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-background-color: transparent;">
+                        <children>
+                            <Text fill="#00564d" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20px;" text="📁" />
+                            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="المجموعات الفرعية">
+                                <font>
+                                    <Font name="Cairo SemiBold" size="18.0" />
+                                </font>
+                            </Text>
+                            <Region prefHeight="35.0" prefWidth="435.0" HBox.hgrow="ALWAYS" />
+                            <TextField promptText="🔍 بحث في المجموعات..." style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #e0e0e0; -fx-background-color: white; -fx-pref-width: 200px;">
+                                <font>
+                                    <Font name="Cairo Regular" size="13.0" />
+                                </font>
+                            </TextField>
+                        </children>
+                    </HBox>
+
+                    <!-- Subsections Grid -->
+                    <ScrollPane fx:id="cardsPane" fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="415.0" prefWidth="854.0" style="-fx-background: transparent; -fx-background-color: transparent; -fx-border-radius: 10;" vbarPolicy="NEVER" VBox.vgrow="ALWAYS">
+                        <content>
+                            <HBox fx:id="subSectionsContainer" alignment="CENTER_LEFT" spacing="15" style="-fx-background-color: transparent; -fx-background-radius: 15; -fx-border-radius: 15;" HBox.hgrow="ALWAYS">
+                                <padding>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                </padding>
+                                <!-- This would be populated dynamically with subsection cards -->
+                            </HBox>
+                        </content>
+                    </ScrollPane>
+                </children>
+            </VBox>
+
+            <!-- Container 2: Section Content Table -->
+            <VBox spacing="15" VBox.vgrow="ALWAYS">
+                <children>
+                    <!-- Header -->
+                    <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-background-color: transparent;">
+                        <children>
+                            <Text fill="#00564d" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20px;" text="📋" />
+                            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="محتويات المجموعة">
+                                <font>
+                                    <Font name="Cairo SemiBold" size="18.0" />
+                                </font>
+                            </Text>
+                            <Region HBox.hgrow="ALWAYS" />
+                     <MFXButton onAction="#deleteLink" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: red;" text="حذف" textFill="WHITE">
+                        <font>
+                           <Font name="Cairo Black" size="12.0" />
+                        </font>
+                     </MFXButton>
+                     <MFXButton layoutX="626.0" layoutY="15.0" onAction="#editLinkView" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: #00564d;" text="تعديل" textFill="WHITE">
+                        <font>
+                           <Font name="Cairo Black" size="12.0" />
+                        </font>
+                     </MFXButton>
+                            <TextField promptText="🔍 بحث في المحتوى..." style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #e0e0e0; -fx-background-color: white; -fx-pref-width: 200px;">
+                                <font>
+                                    <Font name="Cairo Regular" size="13.0" />
+                                </font>
+                            </TextField>
+                        </children>
+                    </HBox>
+
+                    <!-- Table View -->
+                    <TableView fx:id="contentTable" minHeight="-Infinity" styleClass="table-view" VBox.vgrow="ALWAYS">
+                        <placeholder>
+                            <Label text="لا توجد عناصر في هذه المجموعة" />
+                        </placeholder>
+                        <columns>
+                            <TableColumn fx:id="numberColumn" prefWidth="50" text="#" />
+                            <TableColumn fx:id="titleColumn" prefWidth="200" text="العنوان" />
+                            <TableColumn fx:id="descriptionColumn" prefWidth="300" text="الوصف" />
+                            <TableColumn fx:id="linkColumn" maxWidth="1.7976931348623157E308" prefWidth="200" text="الرابط" />
+                        </columns>
+                    </TableView>
+                </children>
+            </VBox>
+        </VBox>
+    </content>
+</ScrollPane>

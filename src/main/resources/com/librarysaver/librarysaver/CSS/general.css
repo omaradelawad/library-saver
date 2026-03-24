@@ -1,0 +1,287 @@
+.scroll-bar:vertical .thumb {
+    -fx-background-color:  #00564d; /* Green thumb color */
+    -fx-background-radius: 5em;
+    -fx-background-insets: 2.0, 0.0, 0.0;
+}
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track {
+    -fx-background-color: transparent; /* يخلي الخلفية شفافة */
+}
+
+.scroll-bar:horizontal .track, .scroll-bar:vertical .track {
+    -fx-background-color: #f0f0f0; /* Light gray track color */
+    -fx-background-radius: 2em;
+}
+
+
+
+
+/* To change the width of the scrollbar itself, adjust the font size */
+.scroll-bar {
+    -fx-font-size: 10px;
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+/* ========== التصميم الأساسي للجدول ========== */
+.table-view {
+    -fx-background-color: transparent;
+    -fx-background-radius: 15px;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 15px;
+    -fx-padding: 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);
+}
+
+/* خلفية الجدول */
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #f8f9fa, #eef0f2);
+    -fx-background-radius: 15px 15px 0 0;
+    -fx-padding: 0;
+}
+
+/* ========== تصميم رؤوس الأعمدة ========== */
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 0 1px 1px 0;
+    -fx-padding: 12px 10px;
+}
+
+.table-view .column-header:last-child {
+    -fx-border-width: 0 0 1px 0;
+}
+
+.table-view .column-header .label {
+    -fx-font-family: "Cairo SemiBold";
+    -fx-font-size: 14px;
+    -fx-text-fill: #2c3e50;
+    -fx-alignment: CENTER_RIGHT;
+    -fx-font-weight: bold;
+}
+
+/* ========== تصميم الصفوف ========== */
+.table-view .table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: #f0f0f0;
+    -fx-border-width: 0 0 1px 0;
+    -fx-cell-size: 45px;
+    -fx-cursor: hand;
+}
+
+.table-view .table-row-cell:hover {
+    -fx-background-color: #e8f5f3;  /* لون أخضر فاتح جداً عند التحويم */
+    -fx-cursor: hand;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #d1e8e5;  /* لون أخضر فاتح عند الاختيار */
+    -fx-border-color: #00564d;
+    -fx-border-width: 0 0 1px 0;
+    -fx-table-cell-border-color: #00564d;
+}
+
+.table-view .table-row-cell:selected .table-cell {
+    -fx-text-fill: #1a3b35;
+    -fx-font-weight: bold;
+}
+
+/* ========== تصميم الخلايا ========== */
+.table-view .table-cell {
+    -fx-font-family: "Cairo Regular";
+    -fx-font-size: 13px;
+    -fx-text-fill: #34495e;
+    -fx-alignment: CENTER_RIGHT;
+    -fx-padding: 8px 12px;
+    -fx-border-color: transparent;
+}
+
+/* ========== تصميم أعمدة محددة ========== */
+/* عمود الرقم */
+.table-column#numberColumn .table-cell {
+    -fx-font-weight: bold;
+    -fx-text-fill: #00564d;
+    -fx-alignment: CENTER;
+}
+
+/* عمود العنوان */
+.table-column#titleColumn .table-cell {
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+/* عمود الرابط */
+.table-column#linkColumn .table-cell {
+    -fx-text-fill: #2980b9;
+}
+
+/* عمود الإجراءات */
+.table-column#actionsColumn .table-cell {
+    -fx-alignment: CENTER;
+    -fx-padding: 4px 8px;
+}
+
+/* ========== تصميم الأزرار داخل الجدول ========== */
+.action-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 20px;
+    -fx-padding: 6px 12px;
+    -fx-font-family: "Cairo Regular";
+    -fx-font-size: 12px;
+    -fx-cursor: hand;
+    -fx-text-fill: #34495e;
+}
+
+.action-button:hover {
+    -fx-background-color: #e0e0e0;
+}
+
+.action-button.edit-button {
+    -fx-background-color: #00564d20;
+    -fx-text-fill: #00564d;
+}
+
+.action-button.edit-button:hover {
+    -fx-background-color: #00564d;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, #00564d80, 5, 0, 0, 2);
+}
+
+.action-button.delete-button {
+    -fx-background-color: #e74c3c20;
+    -fx-text-fill: #e74c3c;
+}
+
+.action-button.delete-button:hover {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, #e74c3c80, 5, 0, 0, 2);
+}
+
+.action-button.view-button {
+    -fx-background-color: #3498db20;
+    -fx-text-fill: #3498db;
+}
+
+.action-button.view-button:hover {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, #3498db80, 5, 0, 0, 2);
+}
+
+/* ========== تصميم شريط التمرير للجدول ========== */
+.table-view .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-pref-width: 12px;
+}
+
+.table-view .scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+}
+
+.table-view .scroll-bar:vertical .thumb {
+    -fx-background-color: #00564d;
+    -fx-background-radius: 10px;
+    -fx-opacity: 0.6;
+}
+
+.table-view .scroll-bar:vertical .thumb:hover {
+    -fx-opacity: 0.9;
+}
+
+.table-view .scroll-bar:vertical .increment-button,
+.table-view .scroll-bar:vertical .decrement-button {
+    -fx-padding: 0;
+    -fx-pref-height: 0;
+    -fx-opacity: 0;
+}
+
+/* ========== تصميم مكان عدم وجود بيانات ========== */
+.table-view .placeholder {
+    -fx-background-color: transparent;
+    -fx-padding: 30px;
+}
+
+.table-view .placeholder .label {
+    -fx-font-family: "Cairo Regular";
+    -fx-font-size: 16px;
+    -fx-text-fill: #95a5a6;
+    -fx-graphic: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="%23bdc3c7"><path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"/></svg>');
+    -fx-graphic-text-gap: 10px;
+    -fx-content-display: TOP;
+}
+
+/* ========== تصميم متغير للصفوف (Zebra Striping) ========== */
+.table-view .table-row-cell:odd {
+    -fx-background-color: #fcfcfc;
+}
+
+.table-view .table-row-cell:even {
+    -fx-background-color: white;
+}
+
+.table-view .table-row-cell:odd:hover,
+.table-view .table-row-cell:even:hover {
+    -fx-background-color: #e8f5f3;
+}
+
+/* ========== تصميم الفواصل بين الأعمدة ========== */
+.table-view .filler {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-drag-header {
+    -fx-background-color: #00564d;
+}
+
+/* ========== تصميم مخصص للجدول في وضع ملء الشاشة ========== */
+.table-view.full-screen {
+    -fx-pref-height: 400px;
+    -fx-max-height: Infinity;
+}
+
+/* ========== تصميم شريط الحالة السفلي ========== */
+.table-view .table-footer {
+    -fx-background-color: #f8f9fa;
+    -fx-background-radius: 0 0 15px 15px;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1px 0 0 0;
+    -fx-padding: 10px;
+}
+
+/* ========== تصميم أيقونات داخل الجدول ========== */
+.table-icon {
+    -fx-icon-size: 18px;
+    -fx-icon-color: #00564d;
+}
+
+.table-icon:hover {
+    -fx-icon-color: #00796b;
+}
+
+.navbtn {
+    -fx-background-color: transparent ;
+    transition: -fx-background-color 0.5s;
+}
+
+.navbtn:hover {
+    -fx-background-color: #f7f7f750;
+}
+
+
+.card{
+    -fx-pref-width : 370 ;
+    transition: -fx-pref-width 0.5s;
+}
+.card:hover{
+
+     -fx-pref-width : 400 ;
+
+}
+.icon{
+
+        -fx-icon-color: white;
+        -fx-icon-size: 30;
+
+}

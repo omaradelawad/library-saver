@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXStepper?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane fx:id="gridPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="705.0" prefWidth="1275.0" style="-fx-background-color: black;" stylesheets="@CSS/general.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.librarysaver.librarysaver.HelloController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="633.0" prefWidth="116.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" prefWidth="1159.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="727.0" prefWidth="119.0" style="-fx-background-color: #00564d;">
+         <children>
+            <VBox alignment="CENTER" prefHeight="101.0" prefWidth="100.0">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="522.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <VBox fx:id="homeButton" alignment="CENTER" onMouseClicked="#onHomeClicked" prefHeight="69.0" prefWidth="119.0" style="-fx-background-radius: 15px;" styleClass="navbtn" stylesheets="@CSS/general.css">
+                     <children>
+                        <Label fx:id="mainByutton" text="الرئيسية" textFill="WHITE">
+                           <font>
+                              <Font name="Cairo Regular" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </VBox>
+                  <VBox fx:id="sectionsButton" alignment="CENTER" layoutX="10.0" layoutY="229.0" onMouseClicked="#onSectionsClicked" prefHeight="69.0" prefWidth="119.0" style="-fx-background-radius: 15;" styleClass="navbtn">
+                     <children>
+                        <Label fx:id="mainByutton1" text="الاقسام" textFill="WHITE">
+                           <font>
+                              <Font name="Cairo Regular" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </VBox>
+                  <VBox fx:id="downloadButton" alignment="CENTER" layoutX="10.0" layoutY="264.0" opacity="0.5" prefHeight="69.0" prefWidth="119.0" style="-fx-background-radius: 15px;" styleClass="navbtn">
+                     <children>
+                        <Label fx:id="mainByutton11" text="تحميل" textFill="WHITE">
+                           <font>
+                              <Font name="Cairo Regular" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="WAIT" />
+                     </cursor>
+                  </VBox>
+                  <VBox fx:id="storageButton" alignment="CENTER" layoutX="10.0" layoutY="298.0" onMouseClicked="#backButtonClicked" opacity="0.5" prefHeight="69.0" prefWidth="119.0" style="-fx-background-radius: 15px;" styleClass="navbtn">
+                     <children>
+                        <Label fx:id="mainByutton111" text="النسخ الاحتياطي" textFill="WHITE">
+                           <font>
+                              <Font name="Cairo Regular" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="WAIT" />
+                     </cursor>
+                  </VBox>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="10.0" layoutY="111.0" prefHeight="138.0" prefWidth="100.0" styleClass="navbtn">
+               <children>
+                  <VBox fx:id="logout" alignment="CENTER" prefHeight="200.0" prefWidth="109.0">
+                     <children>
+                        <Label fx:id="mainByutton1111" contentDisplay="CENTER" prefHeight="38.0" prefWidth="41.0" text="الخروج" textFill="WHITE">
+                           <font>
+                              <Font name="Cairo Regular" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </VBox>
+      <StackPane fx:id="contentVbox" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #2d2d2d;" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+         <children>
+            <MFXStepper />
+         </children></StackPane>
+   </children>
+</GridPane>
