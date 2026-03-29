@@ -12,6 +12,8 @@ import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
 import javafx.scene.layout.HBox;
 import javafx.util.Duration;
 import org.hibernate.Session;
@@ -280,6 +282,23 @@ public class ViewSectionViewController   {
             fetchSections( Long.parseLong(sectionId.getText()) );
 
         }
+
+    }
+
+
+    // copy the link from selected row from the table
+    @FXML
+    public void copyLink(){
+        var clipboard = Clipboard.getSystemClipboard();
+
+        var clipboardContent = new ClipboardContent() ;
+
+        Link selectedLink = contentTable.getSelectionModel().getSelectedItem();
+
+        clipboardContent.putString(selectedLink.link) ;
+
+        clipboard.setContent(clipboardContent);
+
 
     }
 

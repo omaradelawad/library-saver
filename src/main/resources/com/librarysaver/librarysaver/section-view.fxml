@@ -303,6 +303,11 @@
                            <Font name="Cairo Black" size="12.0" />
                         </font>
                      </MFXButton>
+                     <MFXButton layoutX="578.0" layoutY="15.0" onAction="#copyLink" prefHeight="25.0" prefWidth="119.0" style="-fx-background-color: #258394;" text="نسخ الرابط" textFill="WHITE">
+                        <font>
+                           <Font name="Cairo Black" size="12.0" />
+                        </font>
+                     </MFXButton>
                             <TextField promptText="🔍 بحث في المحتوى..." style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #e0e0e0; -fx-background-color: white; -fx-pref-width: 200px;">
                                 <font>
                                     <Font name="Cairo Regular" size="13.0" />

@@ -111,12 +111,7 @@ public class SectionViewController {
         try(Session session = HibernateUtil.getSessionFactory().openSession()) {
 
             session.beginTransaction();
-
             Section section = new Section(sectionName.getText() , description.getText() ,  src.getText());
-//            section.title = sectionName.getText() ;
-//            section.description = description.getText() ;
-//            section.imagePath = src.getText() ;
-
             session.persist(section);
             session.getTransaction().commit() ;
             AlertsHelpers.showSaveSuccess();
@@ -125,7 +120,6 @@ public class SectionViewController {
             animation.playFromStart();
             initialize();
 
-            return;
         }catch (Exception e ){
 
         }

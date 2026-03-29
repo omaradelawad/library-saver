@@ -47,7 +47,7 @@ public class CardsController {
 
 
     public void initialize(){
-
+        // static class
         IconHelper.setIcon(viewSectionButton, "EYE_SHOW_20");
         IconHelper.setIcon(deleteSectionButton, "DELETE_20");
 
@@ -70,7 +70,7 @@ public class CardsController {
             // this method will fill the data in the header
             controller.data(this.id.getText() , this.titleLabel.getText());
             // this method will fetch data depending on section id
-            controller.fetchSections( Long.parseLong(this.id.getText())  );
+            controller.fetchSections( Long.parseLong(this.id.getText()));
             //
             HelloController.getInstance().setView(root);
             System.out.println("clicked");
@@ -82,6 +82,8 @@ public class CardsController {
 
     }
 
+
+
     @FXML
     //? used to fill data to the card
     public void data(Section section){
@@ -89,6 +91,7 @@ public class CardsController {
         descriptionLabel.setText(section.description);
         id.setText(section.id.toString());
     }
+
 
     @FXML
     public void deleteSection() throws IOException {
@@ -110,11 +113,7 @@ public class CardsController {
 
                 session.delete(section);
                 session.getTransaction().commit();
-//                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-//                alert.setTitle("عمليه ناجحة");
-//                alert.setHeaderText("تم الحذف");
-//                alert.setContentText("تم الحذف بنجاخ");
-//                alert.showAndWait();
+
                 AlertsHelpers.showDeleteSuccess();
                 ViewSectionViewController.controller.fetchSections(parentId);
                 return;
@@ -123,12 +122,6 @@ public class CardsController {
 
             session.remove(section);
             session.getTransaction().commit();
-//            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//            alert.setTitle("عمليه ناجحة");
-//            alert.setHeaderText("تم الحذف");
-//            alert.setContentText("تم الحذف بنجاخ");
-//            alert.showAndWait();
-
             AlertsHelpers.showDeleteSuccess();
             SectionViewController.section.initialize();
 
@@ -149,6 +142,8 @@ public class CardsController {
         }
 
     }
+
+
 
     public  void editSection() throws IOException{
 
