@@ -18,6 +18,7 @@ import javafx.scene.layout.HBox;
 import javafx.util.Duration;
 import org.hibernate.Session;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 public class ViewSectionViewController   {
@@ -258,9 +259,9 @@ public class ViewSectionViewController   {
             animation.playFromStart();
 
 
-        }catch (RuntimeException e  ){
-            AlertsHelpers.showEmptyFieldsAlert();
-            e.printStackTrace();
+        }catch (NullPointerException e  ){
+            AlertsHelpers.showError("حدد صف اولا");
+//            e.printStackTrace();
 
         }
 
@@ -281,6 +282,8 @@ public class ViewSectionViewController   {
 
             fetchSections( Long.parseLong(sectionId.getText()) );
 
+        }catch (NullPointerException e  ){
+            AlertsHelpers.showError("حدد صف اولا");
         }
 
     }
@@ -289,15 +292,23 @@ public class ViewSectionViewController   {
     // copy the link from selected row from the table
     @FXML
     public void copyLink(){
-        var clipboard = Clipboard.getSystemClipboard();
 
-        var clipboardContent = new ClipboardContent() ;
 
-        Link selectedLink = contentTable.getSelectionModel().getSelectedItem();
+        try {
+            var clipboard = Clipboard.getSystemClipboard();
 
-        clipboardContent.putString(selectedLink.link) ;
+            var clipboardContent = new ClipboardContent() ;
 
-        clipboard.setContent(clipboardContent);
+            Link selectedLink = contentTable.getSelectionModel().getSelectedItem();
+
+            clipboardContent.putString(selectedLink.link) ;
+
+            clipboard.setContent(clipboardContent);
+        }catch (NullPointerException e){
+            AlertsHelpers.showError("حدد صف اولا");
+        }
+
+
 
 
     }

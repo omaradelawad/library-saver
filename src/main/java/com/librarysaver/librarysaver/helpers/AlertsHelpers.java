@@ -40,4 +40,12 @@ public class AlertsHelpers {
         alert.setContentText("تم حذف البيانات بنجاح.");
         alert.showAndWait();
     }
+
+    public static void showError(String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("خطأ");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
 }
